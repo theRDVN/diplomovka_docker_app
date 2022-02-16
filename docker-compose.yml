@@ -1,0 +1,24 @@
+version: '1'
+services:
+  diplomovka_app: 
+    image: therdvn/diplomovka-docker-app:0.0.1-SNAPSHOT
+    container_name: diplomovka_app
+    restart: always
+    privileged: true
+    ports:
+      - 8080:8080
+    logging:
+      driver: syslog
+      options:
+        tag: "common.prometheus-stack.cadvisor.docker"
+    networks:
+      default:
+        aliases:
+          - docker_app
+
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
