@@ -1,4 +1,4 @@
-version: '1'
+version: '2'
 services:
   diplomovka_app: 
     image: therdvn/diplomovka-docker-app:0.0.1-SNAPSHOT
@@ -8,9 +8,12 @@ services:
     ports:
       - 8080:8080
     logging:
-      driver: syslog
+      driver: "json-file"
       options:
-        tag: "common.prometheus-stack.cadvisor.docker"
+        max-size: 50m
+        max-file: "3"
+        labels: "spring-boot-app"
+        env: "base"
     networks:
       default:
         aliases:
