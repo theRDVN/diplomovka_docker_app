@@ -1,8 +1,8 @@
 version: '2'
 services:
-  diplomovka_app: 
+  diplomovka-docker-app: 
     image: therdvn/diplomovka-docker-app:latest
-    container_name: diplomovka-docker-app
+    container_name: diplomovka_app
     restart: always
     privileged: true
     ports:
