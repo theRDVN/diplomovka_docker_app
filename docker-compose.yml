@@ -1,7 +1,7 @@
 version: '2'
 services:
   diplomovka_app: 
-    image: therdvn/diplomovka-docker-app:0.0.1-SNAPSHOT
+    image: therdvn/diplomovka-docker-app:latest
     container_name: diplomovka_app
     restart: always
     privileged: true
